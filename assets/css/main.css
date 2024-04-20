@@ -1,0 +1,152 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+#__nuxt {
+  color: white;
+}
+.contact-logo {
+  height: 25px;
+}
+
+/* .Marquee-content-left {
+  animation: marqueeLeft-d9c9850c 120s linear infinite running;
+  display: flex;
+}
+.Marquee {
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-weight: 200;
+  overflow: hidden;
+  padding: 1em;
+}
+.Marquee-tag {
+  align-items: center;
+  border-radius: 5px;
+  display: inline-flex;
+  height: 120px;
+  justify-content: center;
+  margin: 0 1em;
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+  width: 200px;
+}
+.Marquee-tag img {
+  height: 40%;
+} */
+
+.Marquee {
+  align-items: center;
+  box-sizing: border-box;
+  color: #fff;
+  display: flex;
+  font-weight: 200;
+  overflow: hidden;
+  padding: 1em;
+}
+
+.Marquee-content-left {
+  animation: marqueeLeft-d9c9850c 120s linear infinite running;
+  display: flex;
+}
+
+.Marquee-content-right {
+  animation: marqueeRight-d9c9850c 120s linear infinite running;
+  display: flex;
+}
+
+.Marquee-content-left:hover,
+.Marquee-content-right:hover {
+  animation-play-state: paused;
+}
+
+.Marquee-tag {
+  align-items: center;
+  border-radius: 5px;
+  display: inline-flex;
+  height: 120px;
+  justify-content: center;
+  margin: 0 1em;
+  padding: 0.5em;
+  transition: all 0.5s ease-in-out;
+  width: 200px;
+}
+.logo {
+  height: 120px;
+}
+.Marquee-tag img {
+  height: 40%;
+}
+
+@media (width < 768px) {
+  .Marquee-tag img {
+    height: 30%;
+  }
+
+  .Marquee-tag {
+    height: 90px;
+    margin: 0 0.2em;
+    width: 120px;
+  }
+}
+
+.Marquee-tag:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  transition: all 0.5s ease-in-out;
+}
+
+@keyframes marqueeLeft-d9c9850c {
+  0% {
+    transform: translateX(-50%);
+  }
+
+  to {
+    transform: translate(0);
+  }
+}
+
+@keyframes marqueeRight-d9c9850c {
+  0% {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translate(-50%);
+  }
+}
+
+.logo[data-v-bfdb6473] {
+  height: 120px;
+}
+
+@media (width <= 768px) {
+  .logo[data-v-bfdb6473] {
+    height: 80px;
+  }
+}
+
+.brand-image[data-v-0c58a579] {
+  height: 60px;
+}
+
+@media (width <= 768px) {
+  .brand-image[data-v-0c58a579] {
+    height: 150px;
+  }
+}
+
+.blog-image {
+  height: 200px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+
+.logo-action {
+  background: linear-gradient(45deg, #ff979c, #704fe2);
+  border-radius: 30px;
+  padding: 2px;
+}
