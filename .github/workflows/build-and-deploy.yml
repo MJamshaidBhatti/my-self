@@ -16,22 +16,23 @@ jobs:
     - name: Checkout 🛎️
       uses: actions/checkout@v3
 
-    - name: Setup Node.js ${{ matrix.node-version }}
+    - name: Setup PNPM
+      uses: pnpm/action-setup@v2
+      with:
+        version: 7
+
+    - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v3
       with:
         node-version: ${{ matrix.node-version }}
+        cache: 'pnpm'
 
-    - name: Setup PNPM
-      run: npm install -g pnpm
-
-    - name: Install Dependencies 🔧
+    - name: Install & Generate 🔧
       run: |
-        pnpm install --frozen-lockfile
+        pnpm install
+        pnpm generate
       env:
-        NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL }}
-
-    - name: Generate Static Files
-      run: pnpm run generate
+        NUXT_APP_BASE_URL: ${{ vars.NUXT_APP_BASE_URL  }}
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@v4
